@@ -1,0 +1,10 @@
+<input type="text" [formControl]="searchControl" placeholder="Search fruits..." autocomplete="off" />
+
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<ul class="suggestions">
+    <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
+        {{ suggestion }}
+    </li>
+</ul>
